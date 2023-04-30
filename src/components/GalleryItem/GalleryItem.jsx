@@ -4,15 +4,30 @@ import axios from 'axios';
 
 function CreateGallery(props) {
 console.log(props.id);
-console.log(props.likes);
+console.log(props.description);
 
-    const [buttonText, setButtonText] = useState(props.path)
+    const [buttonText, setButtonText] = useState(<img src = {props.path} width='120'
+/>);
 
 
-    const showDescription = () => {
+    const toggleDescription = () => {
         console.log('button works');
-        setButtonText(props.description);
+        if (buttonText) {
+            setButtonText(props.description);
+        } else {
+            setButtonText()
+           
+    
+        }
+    console.log(buttonText);
+    }
 
+    const applyDescription = () => {
+        if (buttonText === false) {
+            setButtonText(props.path);
+        } else {
+            setButtonText(props.description);
+        }
     }
 
     const likePost = () => {
@@ -35,9 +50,9 @@ console.log(props.likes);
 return(
     <>
     <div>
-    <button onClick = {showDescription}>
-        <img src = {buttonText} width='100'
-     />
+    <button onClick = {toggleDescription}>
+        {/* <img src = {props.path} width='120'
+     /> */}{buttonText}
      </button>
      </div>
      <div>
