@@ -19,7 +19,7 @@ const galleryItems = [
     description: 'I really love animals and tigers are my favorite.',
      likes: 0 },
 
-    { id: 6, path: 'images/donuts.jpeg', 
+    { id: 6, path: 'images/donuts.webp', 
     description: 'I love food and cooking but my favorite food is donuts', 
     likes: 0 }
 ];

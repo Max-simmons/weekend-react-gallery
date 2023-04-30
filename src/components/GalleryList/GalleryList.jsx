@@ -5,9 +5,10 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 
 
 function GalleryList(props) {
-    
+    console.log('in galleryList');
+    console.log(JSON.stringify(props, null, 4))
     return (
-        <ul>
+        <div>
         {props.galleryImages.map(image => {
             return (
                 <GalleryItem
@@ -15,14 +16,13 @@ function GalleryList(props) {
                 image = {image.path}
                 description = {image.descrption}
                 likes = {image.likes}  
-                fetchImage  = {fetchImage}
                 />
 
             )
         })
     }
             
-        </ul>
+        </div>
     )
 
 }

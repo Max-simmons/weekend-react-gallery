@@ -7,6 +7,8 @@ import GalleryList from '../GalleryList/GalleryList';
 
 
 
+
+
 function App() {
 
   const [galleryImages, setGalleryImages] = useState([]);
@@ -17,9 +19,9 @@ function App() {
       url: '/gallery',
     }).then((res) => {
       setGalleryImages(res.data);
-      console.log('Got our images');
+      console.log('Got our images', res.data);
     }).catch((err) => {
-      console.log('Couldnt get images', err)
+      console.log('Couldnt get images', err);
     })
   }
 
@@ -34,9 +36,9 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <GalleryList 
-        fetchImages = {fetchImages} 
+        galleryImages = {galleryImages}
         />
-        <img src="images/goat_small.jpg"/>
+        
       </div>
     );
 }
