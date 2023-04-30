@@ -3,16 +3,11 @@ import './App.css';
 import axios from 'axios'; 
 import GalleryList from '../GalleryList/GalleryList';
 
-
-
-
-
-
-
+// function to produce the app
 function App() {
 
   const [galleryImages, setGalleryImages] = useState([]);
-
+// function to 'GET' the data from the server
   const fetchImages = () => {
     axios({
       method: 'GET',
@@ -28,11 +23,11 @@ function App() {
   useEffect(() => {
     fetchImages();
   }, [])
-
+// How the data will appear on to the DOM 
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">Max's Life in Pictures</h1>
         </header>
         
         <GalleryList 

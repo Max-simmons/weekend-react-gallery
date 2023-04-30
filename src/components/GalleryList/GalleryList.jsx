@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import GalleryItem from '../GalleryItem/GalleryItem';
 
-
+// function to render the list component on the app 
 
 function GalleryList(props) {
     console.log('in galleryList');
     console.log(JSON.stringify(props, null, 4))
     return (
-        <div>
+        <div className='container'>
         {props.galleryImages.map(image => {
+            // adding an item conponent to further edit items
             return (
                 <GalleryItem
             

@@ -1,7 +1,8 @@
 import { useState } from 'react'; 
 import axios from 'axios';
+import './GalleryItem.css';
 
-
+// function to create each gallery item
 function CreateGallery(props) {
 console.log(props.id);
 console.log(props.description);
@@ -22,14 +23,14 @@ console.log(props.description);
     console.log(buttonText);
     }
 
-    const applyDescription = () => {
-        if (buttonText === false) {
-            setButtonText(props.path);
-        } else {
-            setButtonText(props.description);
-        }
-    }
-
+    // const applyDescription = () => {
+    //     if (buttonText === false) {
+    //         setButtonText(props.path);
+    //     } else {
+    //         setButtonText(props.description);
+    //     }
+    // }
+// function to like a post and update the data in the server
     const likePost = () => {
         console.log('I like this');
         axios({
@@ -46,13 +47,12 @@ console.log(props.description);
         })
     }
 
-
+// this is how the data will appear on the component
 return(
     <>
-    <div>
+    <div className = 'item' >
     <button onClick = {toggleDescription}>
-        {/* <img src = {props.path} width='120'
-     /> */}{buttonText}
+      {buttonText}
      </button>
      </div>
      <div>
